@@ -7,8 +7,8 @@ body {
 }
 
 #ball {
-    width: 100px;
-    height: 100px;
+    width: 150px;
+    height: 150px;
     border-radius: 50%;
     position: absolute;
     cursor: pointer;

@@ -47,9 +47,23 @@ function hideBall() {
             color = '#' + ((Math.random() * 0xffffff) << 0).toString(16);
         }
 
+        xSpeed = Math.random() * 12;
+        ySpeed = Math.random() * 12;
+
+        if (xSpeed < 5) {
+            xSpeed += 5;
+        }
+
+        if (ySpeed < 5) {
+            ySpeed += 5;
+        }
+
         if (navigator.vibrate) {
             navigator.vibrate([200, 100, 200]);
         }
+
+        console.log(`xSpeed: ${Math.round(xSpeed, 0)}`);
+        console.log(`ySpeed: ${Math.round(ySpeed, 0)}`);
     }, 1000);
 }
 
