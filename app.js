@@ -15,7 +15,7 @@ let x = Math.random() * screenWidth;
 let y = Math.random() * screenHeight;
 let xSpeed = 5;
 let ySpeed = 5;
-let color = '#ff0000';
+let color = '#ff0000ff';
 let timeout = null;
 
 function moveBall() {
@@ -46,10 +46,10 @@ function hideBall() {
         x = Math.random() * screenWidth;
         y = Math.random() * screenHeight;
 
-        color = '#' + ((Math.random() * 0xffffff) << 0).toString(16);
+        color = '#' + ((Math.random() * 0xffffffff) << 0).toString(16);
         while (parseInt(color.substring(1), 16) < parseInt('1c1c1c', 16)) {
             console.log(`Prevented the use of color ${color}`);
-            color = '#' + ((Math.random() * 0xffffff) << 0).toString(16);
+            color = '#' + ((Math.random() * 0xffffffff) << 0).toString(16);
         }
     }, 1000);
 }
