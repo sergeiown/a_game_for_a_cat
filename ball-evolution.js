@@ -46,6 +46,10 @@ function hideBall() {
             console.log(`Prevented the use of color ${color}`);
             color = '#' + ((Math.random() * 0xffffff) << 0).toString(16);
         }
+
+        if (navigator.vibrate) {
+            navigator.vibrate([200, 100, 200]);
+        }
     }, 1000);
 }
 
