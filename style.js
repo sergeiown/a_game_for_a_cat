@@ -13,5 +13,7 @@ body {
     border-radius: 50%;
     position: absolute;
     cursor: pointer;
+    background: url('mouse.png') no-repeat center center / 75% 75%;
+    transition: transform 0.2s ease;
 }
 `;

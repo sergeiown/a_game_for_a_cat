@@ -15,6 +15,9 @@ function moveBall() {
     x += xSpeed;
     y += ySpeed;
 
+    const rotation = Math.atan2(ySpeed, xSpeed);
+    ball.style.transform = `rotate(${rotation + 11}rad)`;
+
     if (x + ball.clientWidth > screenWidth || x < 0) {
         x = Math.max(Math.min(x, screenWidth - ball.clientWidth), 0);
         xSpeed = -xSpeed;
@@ -36,6 +39,7 @@ function moveBall() {
 function hideBall() {
     clearTimeout(timeout);
     ball.style.display = 'none';
+
     timeout = setTimeout(() => {
         ball.style.display = 'block';
         x = Math.random() * screenWidth;
@@ -47,8 +51,8 @@ function hideBall() {
             color = '#' + ((Math.random() * 0xffffff) << 0).toString(16);
         }
 
-        xSpeed = Math.random() * 12;
-        ySpeed = Math.random() * 12;
+        xSpeed = Math.random() * 10;
+        ySpeed = Math.random() * 10;
 
         if (xSpeed < 5) {
             xSpeed += 5;
