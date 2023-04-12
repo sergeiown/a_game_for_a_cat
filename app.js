@@ -36,7 +36,11 @@ function hideBall() {
         ball.style.display = 'block';
         x = Math.random() * screenWidth;
         y = Math.random() * screenHeight;
-        color = '#' + ((Math.random() * 0xffffff) << 0).toString(16);
+
+        let color = '#' + ((Math.random() * 0xffffff) << 0).toString(16);
+        while (color === '#1c1c1c') {
+            color = '#' + ((Math.random() * 0xffffff) << 0).toString(16);
+        }
     }, 1000);
 }
 
