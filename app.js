@@ -3,7 +3,6 @@
 import { styles } from './style.js';
 
 const styleSheet = document.createElement('style');
-styleSheet.type = 'text/css';
 styleSheet.innerText = styles;
 document.head.appendChild(styleSheet);
 
@@ -15,7 +14,7 @@ let x = Math.random() * screenWidth;
 let y = Math.random() * screenHeight;
 let xSpeed = 5;
 let ySpeed = 5;
-let color = '#ff0000ff';
+let color = '#ff0000';
 let timeout = null;
 
 function moveBall() {
@@ -23,10 +22,12 @@ function moveBall() {
     y += ySpeed;
 
     if (x + ball.clientWidth > screenWidth || x < 0) {
+        x = Math.max(Math.min(x, screenWidth - ball.clientWidth), 0);
         xSpeed = -xSpeed;
     }
 
     if (y + ball.clientHeight > screenHeight || y < 0) {
+        y = Math.max(Math.min(y, screenHeight - ball.clientHeight), 0);
         ySpeed = -ySpeed;
     }
 
@@ -46,10 +47,10 @@ function hideBall() {
         x = Math.random() * screenWidth;
         y = Math.random() * screenHeight;
 
-        color = '#' + ((Math.random() * 0xffffffff) << 0).toString(16);
+        color = '#' + ((Math.random() * 0xffffff) << 0).toString(16);
         while (parseInt(color.substring(1), 16) < parseInt('1c1c1c', 16)) {
             console.log(`Prevented the use of color ${color}`);
-            color = '#' + ((Math.random() * 0xffffffff) << 0).toString(16);
+            color = '#' + ((Math.random() * 0xffffff) << 0).toString(16);
         }
     }, 1000);
 }
