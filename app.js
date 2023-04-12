@@ -37,8 +37,9 @@ function hideBall() {
         x = Math.random() * screenWidth;
         y = Math.random() * screenHeight;
 
-        let color = '#' + ((Math.random() * 0xffffff) << 0).toString(16);
-        while (color === '#1c1c1c') {
+        color = '#' + ((Math.random() * 0xffffff) << 0).toString(16);
+        while (parseInt(color.substring(1), 16) < parseInt('1c1c1c', 16)) {
+            console.log(`Prevented the use of color ${color}`);
             color = '#' + ((Math.random() * 0xffffff) << 0).toString(16);
         }
     }, 1000);
