@@ -10,4 +10,4 @@ document.head.appendChild(styleSheet);
 const ball = document.getElementById('ball');
 
 moveBall();
-ball.addEventListener('pointerdown', hideBall);
+ball.addEventListener('click', hideBall);
