@@ -1,3 +1,5 @@
+'use strict';
+
 export const styles = `
 body {
     background-color: #1c1c1c;
