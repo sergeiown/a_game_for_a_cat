@@ -40,6 +40,10 @@ function hideBall() {
     clearTimeout(timeout);
     ball.style.display = 'none';
 
+    const audio = document.createElement('audio');
+    audio.setAttribute('src', 'mouse.mp3');
+    audio.play();
+
     timeout = setTimeout(() => {
         ball.style.display = 'block';
         x = Math.random() * screenWidth;
