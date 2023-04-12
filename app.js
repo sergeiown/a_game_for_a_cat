@@ -28,3 +28,17 @@ function moveBall() {
 
     requestAnimationFrame(moveBall);
 }
+
+function hideBall() {
+    clearTimeout(timeout);
+    ball.style.display = 'none';
+    timeout = setTimeout(() => {
+        ball.style.display = 'block';
+        x = Math.random() * screenWidth;
+        y = Math.random() * screenHeight;
+        color = '#' + ((Math.random() * 0xffffff) << 0).toString(16);
+    }, 1000);
+}
+
+moveBall();
+ball.addEventListener('click', hideBall);
