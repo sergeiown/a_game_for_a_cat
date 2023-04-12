@@ -34,7 +34,7 @@ function moveBall() {
     ball.style.left = x + 'px';
     ball.style.top = y + 'px';
     ball.style.backgroundColor = color;
-    ball.style.boxShadow = `0 0 10px 10px ${color}`;
+    ball.style.boxShadow = `0 0 15px 5px ${color}`;
 
     requestAnimationFrame(moveBall);
 }
