@@ -1,3 +1,5 @@
+'use strict';
+
 const caughtCount = document.getElementById('count');
 let caughtMiceCount = 0;
 

@@ -1,6 +1,7 @@
 'use strict';
 
 import countCaughtMice from './count.js';
+import playSound from './sound.js';
 
 const ball = document.getElementById('ball');
 const screenWidth = window.innerWidth;
@@ -44,9 +45,7 @@ function hideBall() {
 
     countCaughtMice();
 
-    const audio = document.createElement('audio');
-    audio.setAttribute('src', 'mouse.mp3');
-    audio.play();
+    playSound();
 
     timeout = setTimeout(() => {
         ball.style.display = 'block';
