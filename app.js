@@ -1,3 +1,12 @@
+'use strict';
+
+import { styles } from './style.js';
+
+const styleSheet = document.createElement('style');
+styleSheet.type = 'text/css';
+styleSheet.innerText = styles;
+document.head.appendChild(styleSheet);
+
 const ball = document.getElementById('ball');
 const screenWidth = window.innerWidth;
 const screenHeight = window.innerHeight;
