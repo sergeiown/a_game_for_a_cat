@@ -73,10 +73,6 @@ function hideBall() {
             ySpeed += 5;
         }
 
-        if (navigator.vibrate) {
-            navigator.vibrate([200, 100, 200]);
-        }
-
         console.log(`xSpeed: ${Math.round(xSpeed, 0)}`);
         console.log(`ySpeed: ${Math.round(ySpeed, 0)}`);
     }, 1000);
