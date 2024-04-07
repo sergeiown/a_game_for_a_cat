@@ -7,6 +7,10 @@ const styleSheet = document.createElement('style');
 styleSheet.innerText = styles;
 document.head.appendChild(styleSheet);
 
+window.addEventListener('orientationchange', () => {
+    location.reload();
+});
+
 const ball = document.getElementById('ball');
 
 moveBall();
